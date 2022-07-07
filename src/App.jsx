@@ -1,4 +1,5 @@
-import { useState, memo } from 'react';
+import { useContext, useState, memo } from 'react';
+import { AdminFlagContext } from './components/providers/AdminFlagProvider';
 import { ColoredMessage } from './components/ColoredMessage';
 import { Child1 } from './components/Child1';
 import { Child4 } from './components/Child4';
@@ -13,7 +14,7 @@ export const App = memo(() => {
     setNum(num + 1);
   };
 
-  const [isAdmin, setIsAdmin] = useState(false);
+  const {isAdmin, setIsAdmin} = useContext(AdminFlagContext);
 
   const onClickSwitch = () => setIsAdmin(!isAdmin);
 
