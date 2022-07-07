@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { ColoredMessage } from './components/ColoredMessage';
+import { Child1 } from './components/Child1';
+import { Child4 } from './components/Child4';
 
-export const App = () => {
+export const App = memo(() => {
+  console.log('App レンダリング');
+
   const [num, setNum] = useState(0);
 
   const onClickButton = () => {
@@ -20,6 +24,8 @@ export const App = () => {
       </button>
       <p className='font-bold'>{num}</p>
       <ColoredMessage color='skyblue'>This is a message.</ColoredMessage>
+      <Child1 />
+      <Child4 />
     </>
   );
-};
+});
