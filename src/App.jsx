@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { ColoredMessage } from './components/ColoredMessage';
 
 export const App = () => {
+  const [num, setNum] = useState(0);
+
   const onClickButton = () => {
-    alert('アラート');
+    setNum(num + 1);
   };
 
   return (
@@ -10,7 +13,8 @@ export const App = () => {
       <div>こんにちは</div>
       <p>Welcome to us</p>
       <button onClick={onClickButton}>ボタン</button>
-      <ColoredMessage color="skyblue">This is a message.</ColoredMessage>
+      <p>{num}</p>
+      <ColoredMessage color='skyblue'>This is a message.</ColoredMessage>
     </>
   );
 };
