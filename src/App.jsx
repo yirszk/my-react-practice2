@@ -3,7 +3,7 @@ import { ColoredMessage } from './components/ColoredMessage';
 export const App = () => {
   const onClickButton = () => {
     alert('アラート');
-  };]
+  };
 
   return (
     <>
